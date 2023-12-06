@@ -1,3 +1,10 @@
 to launch slides in this dir use `npx slidev`
 
 
+
+
+Type Hinting DataFrames with `TypeVarTuple`
+
+How `TypeVarTuple` Enables Complete DataFrame Type Hinting
+
+
