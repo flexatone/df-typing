@@ -1,2 +1,2 @@
 # df-typing
-Type-Hint DataFrames
+Type-Hinting DataFrames
