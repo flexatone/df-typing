@@ -7,4 +7,12 @@ Type Hinting DataFrames with `TypeVarTuple`
 
 How `TypeVarTuple` Enables Complete DataFrame Type Hinting
 
+Python 3.11's `TypeVarTuple`: The Missing Piece for DataFrame Type Hinting
+
+Type-Hinting Generic Arrays and Generic DataFrames
+
+
+// Description: 300 words
+
+Python type hints have made Python code more maintainable and statically verifiable. With support for generic containers (such as `list`, `dict`, or `TypedDict`), Python developers benefit from detailed, nested type hints that completely specify type expectations for complex data structures. The same cannot be said for DataFrames, a complex container that (at least as implemented in Pandas) has not been able too express its true type. This changes with the introduction in Python 3.11 of `TypeVarTuple`, a new generic specifier that enables variadic generics.
 
