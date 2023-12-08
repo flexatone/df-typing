@@ -2,17 +2,37 @@ to launch slides in this dir use `npx slidev`
 
 
 
+How `TypeVarTuple` Enables Complete and Expressive DataFrame Type Hinting
 
 Type Hinting DataFrames with `TypeVarTuple`
 
-How `TypeVarTuple` Enables Complete DataFrame Type Hinting
-
 Python 3.11's `TypeVarTuple`: The Missing Piece for DataFrame Type Hinting
 
-Type-Hinting Generic Arrays and Generic DataFrames
+Type-Hinting Generic Arrays and Generic Variadic DataFrames
 
 
 // Description: 300 words
 
-Python type hints have made Python code more maintainable and statically verifiable. With support for generic containers (such as `list`, `dict`, or `TypedDict`), Python developers benefit from detailed, nested type hints that completely specify type expectations for complex data structures. The same cannot be said for DataFrames, a complex container that (at least as implemented in Pandas) has not been able too express its true type. This changes with the introduction in Python 3.11 of `TypeVarTuple`, a new generic specifier that enables variadic generics.
+Python type hints have made Python code more maintainable and statically verifiable. With support for generically typed containers (i.e, defining a `list` of `str` as `list[str]`), Python developers further benefit from type hints that completely specify complex, nested data structures. DataFrames are also a complex, nested data structure: index labels, column lables, and columnar values all have distinct types. And yet, at least with Pandas, generic DataFrame specification is not supported.
+
+Taking advantage of the new `TypeVarTuple` (introduced in Python 3.11), StaticFrame has implemented support for complete generic specification of DataFrames. A DataFrame with date index labels, string column labels, and columnar types of integers and Booleans can now be specified as `sf.Frame[sf.IndexDate, sf.Index[np.str_], np.int64, np.bool_]`. Not only is `TypeVarTuple` variadic (used here to define zero or more columnar types), but interprets star-expanded variable-sized homogenous tuple types (or `Unpack` wrapped tuple types) as variable-sized regions of uniform types. For example, a DataFrame with integer index labels, string column labels, and columnar types with a single leading string column followed by zero or more float columns can be specified as `sf.Frame[sf.Index[np.int64], sf.Index[np.str_], np.str_, *tuple[np.float64, ...]]`. `TypeVarTuple` thus permits defining explicit columnar types of fixed or variable size. A DataFrame with no assumptions of index labels, column labels, or columnar types can be specified as `sf.Frame[Any, Any, *tuple[Any, ...]]`.
+
+This presentation will demonstrate how `TypeVarTuple` permits type-hinting columnar types in DataFrames as well as variable-depth hierarchical indices. Using the same type hints for run-time validation with the `CallGuard.check` decorator, as well as automatically deriving and testing type hints at run-time `TypeClinic`, will be demonstrated.
+
+
+
+// Provide an outline that lists the topics and activities you will use to guide the presentation. Please estimate what portion of your presentation you’ll devote to each major topic. We just want to see where the focus will be.
+
+
+The Problem of Typing DataFrames
+`TypeVarTuple`
+Using `TypeVarTuple` for columnar types
+Using `TypeVarTuple` for hierarchical indices
+Using Pyright and Mypy for static analysis
+Using `CallGuard.check` for run-time validation
+Using `TypeClinic` for type discovery and run-time type checking
+
+
+
+
 
