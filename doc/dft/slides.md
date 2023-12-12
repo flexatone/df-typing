@@ -9,10 +9,10 @@ favicon: /favicon.ico
 title: 'How `TypeVarTuple` Makes Generic DataFrames Possible'
 ---
 
-# How `TypeVarTuple` Makes Generic DataFrames Possible
+# How `TypeVarTuple` Enables Complete and Expressive DataFrame Type Hinting
+
 
 ### Christopher Ariza
-
 ### CTO, Research Affiliates
 
 <style>
@@ -44,16 +44,60 @@ Creator of StaticFrame, an alternative DataFrame library
 
 
 ---
+
+# Type Hints Improve our Code
+
+<Transform :scale="1.5">
+<v-clicks>
+
+Increase maintainability
+
+Statically verifiable
+
+</v-clicks>
+</Transform>
+
+
+---
+
+# Generic Containers & Nested Data Structures
+
+<Transform :scale="1.5">
+<v-clicks>
+
+
+</v-clicks>
+</Transform>
+
+
+
+
+---
+
+# The Problem of Typing DataFrames
+
+<Transform :scale="1.5">
+<v-clicks>
+
+
+</v-clicks>
+</Transform>
+
+
+
+
+
+
+
+
+
+
+---
 ---
 # Thank You
 
 <Transform :scale="1.5">
 
-Sli.dev slide toolkit
-
-Code: https://github.com/flexatone/np-bench
-
-`first_true_1d`, `first_true_2d` packaged: https://pypi.org/project/arraykit
 
 StaticFrame: https://static-frame.dev
 </Transform>
